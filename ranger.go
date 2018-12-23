@@ -68,7 +68,7 @@ func (r *Ranger) Unmarshal(output interface{}) error {
 }
 
 func (r *Ranger) loadSettings() (map[string]interface{}, error) {
-	m := map[string]interface{}{}
+	m := make(map[string]interface{})
 	for k, required := range r.keys() {
 		value := r.get(k)
 		if value == nil{
